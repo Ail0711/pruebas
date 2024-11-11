@@ -4,6 +4,7 @@ import os
 import platform
 import subprocess
 from datetime import datetime
+import login as mix
 
 # Crear un objeto ArgumentParser
 parser = argparse.ArgumentParser(description="Aqui para entrar con el argparse")
@@ -29,46 +30,21 @@ def so_verif():
 
 def main():
     so = so_verif
-    if argparse.accion=='menu':
-        if so=="Windows":
+    print("Windochafa")
+    
+    if so=="Windows":
+        print("Windo")
+        if argparse.accion=='menu':
             if argparse.argum1=='powershell':
                 print
             elif argparse.argum1=='bash':
                 print
             elif argparse.argum1=='Pyhton':
-                print
-        elif so == "Linux":
+                mix.main
+    elif so == "Linux":
             if argparse.argum1=='bash':
                 print
             elif argparse.argum1=='Pyhton':
                 print
-    elif argparse.accion=='script':
-
-def generar_hash_archivo(file_path):
-    hash_md5 = hashlib.md5()
-    with open(file_path, "rb") as f:
-        for chunk in iter(lambda: f.read(4096), b""):
-            hash_md5.update(chunk)
-    return hash_md5.hexdigest()
-
-#-------------------------------------------------------------------------------- para poweshell asi deberia de funcionar creo 
-ruta_script = "C:\\ruta al script.ps1"
-
-# Comando para ejecutar el script de PowerShell
-try:
-    resultado = subprocess.run(["powershell", "-ExecutionPolicy", "Bypass", "-File", ruta_script], 
-                               capture_output=True, text=True, check=True)
-    # Mostrar la salida en la terminal
-    print("Salida del script:")
-    print(resultado.stdout)
-except subprocess.CalledProcessError as e:
-    print("Error al ejecutar el script:")
-    print(e.stderr)
-#--------------------------------------------------------------------------------
-
-    hash_resultado = generar_hash_archivo(nombre_archivo)
-    nombre_archivo = f"reporte.txt" #aqui ponemos el nombre del script 
-    print(f"Tarea ejecutada: nombre del sript")
-    print(f"Fecha: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    print(f"Hash del reporte: {hash_resultado}")
-    print(f"Ubicación del archivo: {os.path.abspath(nombre_archivo)}")
+if __name__=="__main__":
+    main()
