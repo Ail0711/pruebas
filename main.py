@@ -33,7 +33,7 @@ def main():
     if args.accion=="menu":
         if so == "Windows":
             if args.argum1=="1":
-                print
+                Menu_pws.menu_ps()
             elif args.argum1=="2":
                 print("No se puede ejecutar en este sistema operativo")
             elif args.argum1=="3":
